@@ -86,7 +86,7 @@ class Validator
         $langDir = $langDir ?: static::langDir();
 
         // Load language file in directory
-        $langFile = rtrim($langDir, '/') . $lang . '.php';
+        $langFile = rtrim($langDir, '/') . '/' . $lang . '.php';
         if (stream_resolve_include_path($langFile) ) {
             $langMessages = include $langFile;
             static::$_ruleMessages = array_merge(static::$_ruleMessages, $langMessages);
@@ -122,7 +122,7 @@ class Validator
             static::$_langDir = $dir;
         }
 
-        return static::$_langDir ?: dirname(dirname(__DIR__)) . '/lang';
+        return static::$_langDir ?: dirname(dirname(dirname(__DIR__))) . '/lang';
     }
 
     /**

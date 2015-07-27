@@ -5,7 +5,7 @@ class LangTest extends BaseTestCase
 {
 	protected function getLangDir()
 	{
-		return __DIR__.'/../../lang';
+		return __DIR__.'/../../../lang';
 	}
 
 	/**
