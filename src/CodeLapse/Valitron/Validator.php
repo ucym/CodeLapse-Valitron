@@ -73,7 +73,7 @@ class Validator
      * @param  string                    $langDir
      * @throws \InvalidArgumentException
      */
-    public function __construct($data, $fields = array(), $lang = null, $langDir = null)
+    public function __construct($data = array(), $fields = array(), $lang = null, $langDir = null)
     {
         // Allows filtering of used input fields against optional second array of field names allowed
         // This is useful for limiting raw $_POST or $_GET data to only known fields
@@ -851,8 +851,12 @@ class Validator
      *
      * @return boolean
      */
-    public function validate()
+    public function validate($data = null, $fields = null)
     {
+        if (is_array($data)) {
+            $this->_fields = !empty($fields) ? array_intersect_key($data, array_flip($fields)) : $data;
+        }
+
         foreach ($this->_validations as $v) {
             foreach ($v['fields'] as $field) {
                  list($values, $multiple) = $this->getPart($this->_fields, explode('.', $field));
