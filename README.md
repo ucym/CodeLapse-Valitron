@@ -5,10 +5,11 @@ with NO dependencies. Valitron uses simple, straightforward validation
 methods with a focus on readable and concise syntax. Valitron is the
 simple and pragmatic validation library you've been looking for.
 
-[![Build
-Status](https://travis-ci.org/vlucas/valitron.png?branch=master)](https://travis-ci.org/vlucas/valitron)
+[![Build Status](https://travis-ci.org/ucym/CodeLapse-Valitron.svg?branch=master)](https://travis-ci.org/ucym/CodeLapse-Valitron)
+<!--
 [![Latest Stable Version](https://poser.pugx.org/vlucas/valitron/v/stable.png)](https://packagist.org/packages/vlucas/valitron)
 [![Total Downloads](https://poser.pugx.org/vlucas/valitron/downloads.png)](https://packagist.org/packages/vlucas/valitron)
+-->
 
 ## Why Valitron?
 
@@ -303,4 +304,3 @@ before running the tests:
 6. Push to the branch (`git push origin my-new-feature`)
 7. Create new Pull Request
 8. Pat yourself on the back for being so awesome
-
