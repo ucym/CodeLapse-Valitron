@@ -1027,6 +1027,6 @@ class ValidateTest extends BaseTestCase
 
 }
 
-function sampleFunctionCallback($field, $value, array $params) {
+function sampleFunctionCallback($value, $field, array $params) {
   return true;
 }
