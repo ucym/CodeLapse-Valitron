@@ -27,6 +27,11 @@ syntax, lightweight code that makes sense, extensible for custom
 callbacks and validations, well tested, and without dependencies. Let's
 get started.
 
+### What the "CodeLapse-Valitron"?
+`CodeLapse-Valitron` is sub project of [CodeLapse](https://github.com/ucym/CodeLapse).
+
+The combined has been changed to the concept of CodeLapse.
+
 ## Installation
 
 Valitron uses [Composer](http://getcomposer.org) to install and update:
