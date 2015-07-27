@@ -17,7 +17,7 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
 
 	protected function resetProperty($name, $value = null)
 	{
-		$prop = new ReflectionProperty('Valitron\Validator', $name);
+		$prop = new ReflectionProperty('CodeLapse\Valitron\Validator', $name);
 		$prop->setAccessible(true);
 		$prop->setValue($value);
 		$prop->setAccessible(false);

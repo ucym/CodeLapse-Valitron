@@ -1,5 +1,5 @@
 <?php
-use Valitron\Validator;
+use CodeLapse\Valitron\Validator;
 
 class ErrorMessagesTest extends BaseTestCase
 {
@@ -58,4 +58,3 @@ class ErrorMessagesTest extends BaseTestCase
         $this->assertEquals($messages, $errors);
     }
 }
-
