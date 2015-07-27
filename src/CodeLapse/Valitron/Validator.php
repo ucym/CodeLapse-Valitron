@@ -79,11 +79,18 @@ class Validator
         // This is useful for limiting raw $_POST or $_GET data to only known fields
         $this->_fields = !empty($fields) ? array_intersect_key($data, array_flip($fields)) : $data;
 
+        $lang !== null and static::lang($lang, false);
+        $langDir !== null and static::langDir($langDir, false);
+        ($lang !== null or $langDir !== null) and static::loadLangFile();
+    }
+
+    protected static function loadLangFile()
+    {
         // set lang in the follow order: constructor param, static::$_lang, default to en
-        $lang = $lang ?: static::lang();
+        $lang = static::lang();
 
         // set langDir in the follow order: constructor param, static::$_langDir, default to package lang dir
-        $langDir = $langDir ?: static::langDir();
+        $langDir = static::langDir();
 
         // Load language file in directory
         $langFile = rtrim($langDir, '/') . '/' . $lang . '.php';
@@ -101,10 +108,11 @@ class Validator
      * @param  string $lang
      * @return string
      */
-    public static function lang($lang = null)
+    public static function lang($lang = null, $reload = true)
     {
         if ($lang !== null) {
             static::$_lang = $lang;
+            $reload and static::loadLangFile();
         }
 
         return static::$_lang ?: 'en';
@@ -116,10 +124,11 @@ class Validator
      * @param  string $dir
      * @return string
      */
-    public static function langDir($dir = null)
+    public static function langDir($dir = null, $reload = true)
     {
         if ($dir !== null) {
             static::$_langDir = $dir;
+            $reload and static::loadLangFile();
         }
 
         return static::$_langDir ?: dirname(dirname(dirname(__DIR__))) . '/lang';
