@@ -1,5 +1,5 @@
 <?php
-use Valitron\Validator;
+use CodeLapse\Valitron\Validator;
 
 class ValidateTest extends BaseTestCase
 {
@@ -764,7 +764,7 @@ class ValidateTest extends BaseTestCase
 
     public function testCustomLabelInMessage()
     {
-        $v = new Valitron\Validator(array());
+        $v = new Validator(array());
         $v->rule('required', 'name')->message('{field} is required')->label('NAME!!!');
         $v->validate();
         $this->assertEquals(array('NAME!!! is required'), $v->errors('name'));
@@ -772,7 +772,7 @@ class ValidateTest extends BaseTestCase
 
     public function testCustomLabelArrayInMessage()
     {
-        $v = new Valitron\Validator(array());
+        $v = new Validator(array());
         $v->rule('required', array('name', 'email'))->message('{field} is required');
         $v->labels(array(
           'name' => 'Name',
@@ -787,7 +787,7 @@ class ValidateTest extends BaseTestCase
 
     public function testCustomLabelArrayWithoutMessage()
     {
-        $v = new Valitron\Validator(array(
+        $v = new Validator(array(
           'password' => 'foo',
           'passwordConfirm' => 'bar'
         ));

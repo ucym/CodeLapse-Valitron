@@ -1,5 +1,5 @@
 <?php
-use Valitron\Validator;
+use CodeLapse\Valitron\Validator;
 
 class LangTest extends BaseTestCase
 {

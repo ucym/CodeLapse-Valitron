@@ -16,4 +16,5 @@ if($vendorPos !== false) {
     $loader = require __DIR__.'/../vendor/autoload.php';
 }
 
-require_once __DIR__ . '/Valitron/BaseTestCase.php';
+require_once __DIR__ . '/../src/CodeLapse/Valitron/Validator.php';
+require_once __DIR__ . '/CodeLapse/Valitron/BaseTestCase.php';
